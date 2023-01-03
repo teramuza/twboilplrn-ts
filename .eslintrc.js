@@ -13,4 +13,25 @@ module.exports = {
       },
     },
   ],
+  settings: {
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true,
+        "project": "./"
+      },
+      "babel-module": {
+        "node": {},
+        "alias": {
+          "@root": "./",
+          "@app": "./app",
+          "@components": "./src/components",
+          "@api": "./app/Api",
+          "@constants": "./app/Constants",
+          "@router": "./app/Router",
+          "@types": "./app/Types",
+          "@utils": "./app/Utils"
+        }
+    },
+    }
+  },
 };

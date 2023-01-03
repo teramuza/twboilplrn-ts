@@ -1,10 +1,10 @@
-module.exports = {
-  presets: ['module:metro-react-native-babel-preset'],
-  plugins: [
+{
+  "presets": ["module:metro-react-native-babel-preset"],
+  "plugins": [
     ["module-resolver", {
       "cwd": "babelrc",
       "extensions": [".js", ".ios.js", ".android.js"],
-      "root": ["./app/"],
+      "root": ["./app"],
       "alias": {
         "@root": "./",
         "@app": "./app",
@@ -15,5 +15,5 @@ module.exports = {
         "@utils": "./app/Utils"
       }
     }]
-  ],
-};
+  ]
+}
