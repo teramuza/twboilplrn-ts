@@ -1,16 +1,6 @@
 {
   "compilerOptions": {
-    "skipLibCheck": true,
-    "moduleResolution": "node",
-    "esModuleInterop": true,
-    "isolatedModules": true,
-    "resolveJsonModule": true,
-    "jsx": "react-native",
-    "allowJs": true,
-    "lib": ["es2017"],
-    "module": "commonjs",
     "baseUrl": ".",
-    "pretty": true,
     "paths": {
       "@app": ["./app"],
       "@router": ["./app/Router"],
@@ -28,15 +18,5 @@
       "@root/*": ["./*"]
     }
   },
-  "exclude": [
-    "node_modules",
-    "babel.config.js",
-    "metro.config.js",
-    ".babelrc"
-  ],
-  "include": [
-    "./app/**/*",
-    "index.js"
-  ],
-  "typeRoots": ["./app/Types"]
+  "exclude": ["node_modules"]
 }

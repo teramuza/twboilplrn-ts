@@ -8,7 +8,7 @@
  * @format
  */
 
-import React, {PropsWithChildren} from 'react';
+import React, { PropsWithChildren } from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -26,12 +26,13 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import { APP_INFO, CONFIG } from '@constants/static';
 
 const Section: React.FC<
   PropsWithChildren<{
     title: string;
   }>
-> = ({children, title}) => {
+> = ({ children, title }) => {
   const isDarkMode = useColorScheme() === 'dark';
   return (
     <View style={styles.sectionContainer}>
@@ -74,6 +75,17 @@ const BaseApp = () => {
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
         <Header />
+        <View style={styles.badge}>
+          <Text
+            style={[
+              styles.badgeText,
+              {
+                color: isDarkMode ? Colors.light : Colors.dark,
+              },
+            ]}>
+            {`Version: ${APP_INFO.VERSION} (build${APP_INFO.BUILD_NUMBER}_${CONFIG.BUILD_TYPE})`}
+          </Text>
+        </View>
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
@@ -114,6 +126,16 @@ const styles = StyleSheet.create({
   },
   highlight: {
     fontWeight: '700',
+  },
+  badge: {
+    position: 'absolute',
+    top: 28,
+    right: 12,
+  },
+  badgeText: {
+    fontSize: 14,
+    fontWeight: '600',
+    textAlign: 'right',
   },
 });
 
