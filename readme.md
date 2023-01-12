@@ -1,4 +1,4 @@
-# React Native TWBoilPlRN-Typescript Template
+# DRAFT: React Native TWBoilPlRN-Typescript Template
 
 React Native template with TWBoilPlRN configuration, ready to use.
 
