@@ -10,7 +10,9 @@ const version = VersionCheck.getCurrentVersion();
 const buildNumber = VersionCheck.getCurrentBuildNumber();
 
 const versionCheck = async () => {
-    const currentVersion = parseFloat(version.replace('.', '').replace('.', ''));
+    const currentVersion = parseFloat(
+        version.replace('.', '').replace('.', ''),
+    );
 
     try {
         const response = await axios.get(VERSION_APP);
@@ -35,7 +37,7 @@ const versionCheck = async () => {
             );
         }
     } catch (error) {
-    // error get version playstore
+        // error get version playstore
     }
 };
 

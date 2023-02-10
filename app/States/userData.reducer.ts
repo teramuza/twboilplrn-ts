@@ -17,7 +17,7 @@ export const userDataSlice = createSlice({
         ...defaultSliceCase,
         setLang: (state, action: PayloadAction<string>) => {
             state.language = action.payload;
-        }
+        },
     },
 });
 

@@ -11,29 +11,29 @@ import { isBoolean } from '@utils/primitiveType.utils';
 const Stack = createNativeStackNavigator();
 
 interface SceneProps {
-  key: string;
-  title?: string;
-  hideNavBar?: boolean;
-  animation?: StackAnimationTypes;
-  gesturesEnabled?: boolean;
-  navigationBarStyle?: StyleProp<{
+    key: string;
+    title?: string;
+    hideNavBar?: boolean;
+    animation?: StackAnimationTypes;
+    gesturesEnabled?: boolean;
+    navigationBarStyle?: StyleProp<{
+        backgroundColor?: string;
+    }>;
     backgroundColor?: string;
-  }>;
-  backgroundColor?: string;
-  titlePosition?: 'center' | 'left';
+    titlePosition?: 'center' | 'left';
 }
 
 // eslint-disable-next-line no-unused-vars
 interface IGenerateScreen<P, S> extends SceneProps {
-  name?: string;
-  component: React.ComponentType<any>;
-  options?:
-    | NativeStackNavigationOptions
-    | ((props: {
-        route: RouteProp<ParamListBase, string>;
-        navigation: any;
-      }) => NativeStackNavigationOptions)
-    | undefined;
+    name?: string;
+    component: React.ComponentType<any>;
+    options?:
+        | NativeStackNavigationOptions
+        | ((props: {
+              route: RouteProp<ParamListBase, string>;
+              navigation: any;
+          }) => NativeStackNavigationOptions)
+        | undefined;
 }
 
 export const generateScreen = <P, S>(

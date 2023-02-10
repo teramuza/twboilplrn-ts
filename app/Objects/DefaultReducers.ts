@@ -13,8 +13,8 @@ export const defaultReducerState: ReducerDefaultProp = {
 };
 
 export const defaultSliceCase: ValidateSliceCaseReducers<
-  State,
-  SliceCaseReducers<State>
+    State,
+    SliceCaseReducers<State>
 > = {
     setError: (state, action) => {
         state.error = true;
@@ -29,5 +29,5 @@ export const defaultSliceCase: ValidateSliceCaseReducers<
     clearError: (state) => {
         state.error = false;
         state.errorMessage = null;
-    }
+    },
 };

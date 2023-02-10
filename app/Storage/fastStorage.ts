@@ -32,7 +32,7 @@ export const saveWithEncryption = (
     value: string | number | boolean | Uint8Array,
 ) => {
     try {
-        const fastStorageSecure = new MMKV({id: `user-${id}`, encryptionKey});
+        const fastStorageSecure = new MMKV({ id: `user-${id}`, encryptionKey });
         fastStorageSecure.set(key, value);
     } catch (e) {
         printData(e);
@@ -89,7 +89,7 @@ export const loadBuffer = (key: string) => {
 
 export const loadStringWithEncryption = (key: string, id: string) => {
     try {
-        const fastStorageSecure = new MMKV({id: `user-${id}`, encryptionKey});
+        const fastStorageSecure = new MMKV({ id: `user-${id}`, encryptionKey });
         const result = fastStorageSecure.getString(key);
         if (result) {
             return result;
@@ -99,7 +99,6 @@ export const loadStringWithEncryption = (key: string, id: string) => {
         printData(e);
     }
 };
-
 
 export const remove = (key: string) => {
     try {

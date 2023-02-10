@@ -45,9 +45,14 @@ const BaseApp: () => React.ReactElement = () => (
     <I18nextProvider i18n={i18nProvider}>
         <SafeAreaView style={Style(0)} />
         <SafeAreaView style={Style(1)}>
-            <AppStatusBar backgroundColor={COLOR_THEME} barStyle="light-content" />
+            <AppStatusBar
+                backgroundColor={COLOR_THEME}
+                barStyle="light-content"
+            />
             <StoreProvider store={store}>
-                <PersistGate loading={<ActivityIndicator />} persistor={persistor}>
+                <PersistGate
+                    loading={<ActivityIndicator />}
+                    persistor={persistor}>
                     <PaperProvider>
                         <RootNavigation />
                     </PaperProvider>

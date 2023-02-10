@@ -24,7 +24,7 @@ export const stringFormat = (string: string, ...values: any[]) => {
         let tempResult = result.replace('{}', value as string);
         tempResult = tempResult.replace(
             RegExp(`\\{${index}\\}`, 'g'),
-      value as string,
+            value as string,
         );
 
         result = tempResult;

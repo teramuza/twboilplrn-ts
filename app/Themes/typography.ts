@@ -51,10 +51,9 @@ const typography = {
         regular: 'Lato-Regular',
         bold: 'Lato-Bold',
         italic: 'Lato-Italic',
-        boldItalic: 'Lato-BoldItalic'
+        boldItalic: 'Lato-BoldItalic',
     },
 };
-
 
 export type ITypography = typeof typography;
 export type IFontSize = keyof typeof typography.fontSizes;

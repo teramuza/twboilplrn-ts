@@ -1,7 +1,7 @@
 import I18n from 'i18next';
 import Constant from '@constants';
 import t from '@screens/strings';
-import {SCENE_NAME} from '@lang/nskey';
+import { SCENE_NAME } from '@lang/nskey';
 import { UserDataActionCreator } from '@states/userData.reducer';
 import { useDispatch } from 'react-redux';
 import { loadString, save } from '@storage/fastStorage';
@@ -16,13 +16,9 @@ const changeLanguage = async (lang) => {
     });
 };
 
-
 const setDefaultLanguage = async () => {
     const lang = loadString(LocalStorageKeys.LANGUAGE) ?? LOCALE.ID;
-    return Promise.all([
-        setLanguage(lang),
-        changeLanguage(lang)
-    ]);
+    return Promise.all([setLanguage(lang), changeLanguage(lang)]);
 };
 
 const setLanguage = (lang) => dispatch(UserDataActionCreator.setLang(lang));
@@ -48,8 +44,4 @@ function getTranslatedTitle(sceneKey) {
     }
 }
 
-export {
-    setDefaultLanguage,
-    setAppLanguage,
-    getTranslatedTitle
-};
+export { setDefaultLanguage, setAppLanguage, getTranslatedTitle };
