@@ -13,19 +13,13 @@ const Stack = createNativeStackNavigator();
 interface SceneProps {
   key: string;
   title?: string;
-  initial?: boolean;
-  leftButtonType?: string;
-  rightButtonType?: string;
-  blackTitle?: boolean;
   hideNavBar?: boolean;
-  direction?: string;
   animation?: StackAnimationTypes;
   gesturesEnabled?: boolean;
   navigationBarStyle?: StyleProp<{
     backgroundColor?: string;
   }>;
   backgroundColor?: string;
-  titleColor?: string;
   titlePosition?: 'center' | 'left';
 }
 
@@ -57,6 +51,7 @@ export const generateScreen = <P, S>(
                     backgroundColor: params.backgroundColor ?? 'white',
                 },
                 headerTitleAlign: params.titlePosition || 'left',
+                title: params.title,
                 ...params.options,
                 ...(params.navigationBarStyle && {
                     headerStyle: params.navigationBarStyle,
