@@ -25,7 +25,7 @@ import 'react-native-gesture-handler';
 import { I18nextProvider } from 'react-i18next';
 import AppStatusBar from '@components/base/AppStatusBar';
 import { getPersistor, getStore } from '@redux/store';
-import RootNavigation from './Root.Navigator';
+import RootNavigation from '@router';
 import I18n from '@lang';
 import { PersistGate } from 'redux-persist/integration/react';
 import Colors from '@themes/colors';
