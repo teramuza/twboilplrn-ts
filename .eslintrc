@@ -149,8 +149,8 @@
         "node": {},
         "alias": {
           "@root": "./",
-          "@api": "./app/Api",
           "@app": "./app",
+          "@api": "./app/Api",
           "@appTypes": "./app/Types",
           "@components": "./app/Components",
           "@constants": "./app/Constants",

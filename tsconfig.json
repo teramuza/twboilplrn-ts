@@ -12,8 +12,8 @@
     "baseUrl": ".",
     "pretty": true,
     "paths": {
-      "@api": ["./app/Api"],
       "@app": ["./app"],
+      "@api": ["./app/Api"],
       "@appTypes": ["./app/Types"],
       "@components": ["./app/Components"],
       "@constants": ["./app/Constants"],
@@ -26,8 +26,8 @@
       "@states": ["./app/States"],
       "@storage": ["./app/Storage"],
 
-      "@api/*": ["./app/Api/*"],
       "@app/*": ["./app/*"],
+      "@api/*": ["./app/Api/*"],
       "@appTypes/*": ["./app/Types/*"],
       "@components/*": ["./app/Components/*"],
       "@constants/*": ["./app/Constants/*"],
