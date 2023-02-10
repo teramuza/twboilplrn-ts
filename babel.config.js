@@ -9,10 +9,18 @@ module.exports = {
         "@root": "./",
         "@app": "./app",
         "@api": "./app/Api",
+        "@appTypes": "./app/Types",
+        "@components": "./app/Components",
         "@constants": "./app/Constants",
+        "@lang": "./app/I18n",
         "@router": "./app/Router",
+        "@redux": "./app/Redux",
+        "@themes": "./app/Themes",
         "@types": "./app/Types",
-        "@utils": "./app/Utils"
+        "@utils": "./app/Utils",
+        "@screens": "./app/Screens",
+        "@states": "./app/States",
+        "@storage": "./app/Storage"
       }
     }]
   ],

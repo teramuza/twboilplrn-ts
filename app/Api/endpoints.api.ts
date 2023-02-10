@@ -1,5 +1,5 @@
-import { CONFIG } from '../Constants/static';
+import { CONFIG } from '@constants/static';
 
-const version_app = `${CONFIG.API_URL}/my_api/endpoints`;
+const VERSION_APP = `${CONFIG.API_URL}/my_api/endpoints`;
 
-export { version_app };
+export { VERSION_APP };
