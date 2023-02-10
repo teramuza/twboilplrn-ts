@@ -10,5 +10,6 @@ export const MainStackScreen = [
         navigationBarStyle: NavBarWhite,
         key: Routes.ExampleScreen,
         component: WelcomePage,
+        hideNavBar: true,
     }),
 ];

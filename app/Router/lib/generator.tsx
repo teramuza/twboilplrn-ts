@@ -7,6 +7,7 @@ import {
 } from '@react-navigation/native-stack';
 import { StackAnimationTypes } from 'react-native-screens';
 import { StyleProp } from 'react-native';
+import { isBoolean } from '@utils/primitiveType.utils';
 const Stack = createNativeStackNavigator();
 
 interface SceneProps {
@@ -25,6 +26,7 @@ interface SceneProps {
   }>;
   backgroundColor?: string;
   titleColor?: string;
+  titlePosition?: 'center' | 'left';
 }
 
 // eslint-disable-next-line no-unused-vars
@@ -50,6 +52,25 @@ export const generateScreen = <P, S>(
             key={params.key}
             name={params.key}
             component={withNavigationParams}
+            options={{
+                contentStyle: {
+                    backgroundColor: params.backgroundColor ?? 'white',
+                },
+                headerTitleAlign: params.titlePosition || 'left',
+                ...params.options,
+                ...(params.navigationBarStyle && {
+                    headerStyle: params.navigationBarStyle,
+                }),
+                ...(isBoolean(params.gesturesEnabled) && {
+                    gestureEnabled: params.gesturesEnabled,
+                }),
+                ...(params.hideNavBar && {
+                    header: () => null,
+                }),
+                ...(params.animation && {
+                    animation: params.animation,
+                }),
+            }}
         />
     );
 };
