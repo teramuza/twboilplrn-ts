@@ -1,6 +1,6 @@
 import { generateScreen } from '@router/lib/generator';
 import WelcomePage from '@screens/Welcome.page';
-import Routes from './key';
+import Routes from './keys';
 import NavigatorStyle from '@themes/navigator.styles';
 
 const { NavBarWhite } = NavigatorStyle;

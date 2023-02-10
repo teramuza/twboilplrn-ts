@@ -1,6 +1,6 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import Routes from '@router/main/key';
+import Routes from './keys';
 import { MainStackScreen } from './screens';
 
 const Stack = createStackNavigator();

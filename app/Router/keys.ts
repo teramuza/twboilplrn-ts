@@ -1,4 +1,4 @@
-import MainStack from './main/key';
+import MainStack from './main/keys';
 
 const Routes = {
     MainStack,
