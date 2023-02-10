@@ -11,8 +11,14 @@ module.exports = {
         "@api": "./app/Api",
         "@constants": "./app/Constants",
         "@router": "./app/Router",
-        "@types": "./app/Types",
-        "@utils": "./app/Utils"
+        "@appTypes": "./app/Types",
+        "@utils": "./app/Utils",
+        "@lang": "./app/I18n",
+        "@screens": "./app/Screens",
+        "@themes": "./app/Themes",
+        "@redux": "./app/Redux",
+        "@components": "./app/Components",
+        "@states": "./app/States"
       }
     }]
   ],

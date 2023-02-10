@@ -16,8 +16,8 @@ APP_INFO.PACKAGE_NAME = 'com.' + APP.name;
 APP_INFO.VERSION = version;
 APP_INFO.BUILD_NUMBER = buildNumber;
 APP_INFO.APP_URL = isAndroid()
-  ? `https://play.google.com/store/apps/details?id=${APP_INFO.PACKAGE_NAME}`
-  : 'https://itunes.apple.com/';
+    ? `https://play.google.com/store/apps/details?id=${APP_INFO.PACKAGE_NAME}`
+    : 'https://itunes.apple.com/';
 
 /**
  * --- APP CONFIG ---
