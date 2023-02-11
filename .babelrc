@@ -16,7 +16,6 @@
         "@router": "./app/Router",
         "@redux": "./app/Redux",
         "@themes": "./app/Themes",
-        "@types": "./app/Types",
         "@utils": "./app/Utils",
         "@screens": "./app/Screens",
         "@states": "./app/States",
