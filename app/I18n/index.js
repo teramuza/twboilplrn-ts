@@ -6,8 +6,8 @@ import Constant from '@constants';
 
 const { LOCALE } = Constant;
 
-const enDictionary = require('./strings/en-EN.json');
-const idDictionary = require('./strings/id-ID.json');
+const enDictionary = require('./strings/en.json');
+const idDictionary = require('./strings/id.json');
 
 const Translation = {
     en: {
