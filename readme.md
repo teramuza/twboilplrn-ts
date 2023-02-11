@@ -37,7 +37,7 @@ apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.grad
 
 ...
 ```
-> In some cases you will have to run a few commands to clean the cache. [Check here](https://gist.github.com/teukuraja/dc84052760367526e3d4310e1c42cb08)
+> In some cases you will have to run a few commands to clean the cache. `yarn clean_android`
 
 ##### Test the application is work
 Run the command below to run the application
@@ -46,17 +46,21 @@ yarn android ENV=dev
 ```
 
 #### 2. Set up application font
-Put your font file into the `/app/Assets/Fonts/` directory.
+Put your font file into the `/app/Assets/fonts/` directory.
 
-Then configure your font, so it's easy to use. Open the file `/app/Themes/Fonts.js`, replace a few lines below:
+Then configure your font, so it's easy to use. Open the file `/app/Themes/typography.ts`, replace a few lines below:
 ```js
 // example: Poppins-Regular.ttf -> so your 'regular' value => Poppins-Regular
 
-export const FontType = {
-  regular: 'YourFontName-Regular', 
-  bold: 'YourFontName-Bold',
-  medium: 'YourFontName-Medium',
-  light: 'YourFontName-Light'
+const typography = {
+  ...,
+    decoration: {
+        regular: 'YourFontName-Regular',
+        bold: 'YourFontName-Bold',
+        italic: 'YourFontName-Italic',
+        boldItalic: 'YourFontName-BoldItalic',
+    },
+  ...,
 };
 ```
 After configuring the above, run the following command to link the fonts to the fonts folder in the android & ios directory:
@@ -71,72 +75,120 @@ Here is the project directory structure tree:
 |-- android
 |-- ios
 |-- app
+    |-- Api
     |-- Assets
-        |-- Images
-        |-- Fonts
+        |-- animations
+        |-- fonts
+        |-- icon
+        |-- image
     |-- Components
-        |-- index.js
+        |-- base
+    |-- Config
     |-- Constants
-    |-- Features
+        |-- index.ts
+        |-- static.js
     |-- I18n
-        |-- en-EN.json
-        |-- id-ID.json
+        |-- strings
+            |-- en.json
+            |-- id.json
+        |-- helper.ts
+        |-- index.js
+        |-- nskey.ts
+    |-- Objects
     |-- Redux
-        |-- index.js
-        |-- Reducers.js
-        |-- Store.js
+        |-- const
+        |-- middlewares.ts
+        |-- storage.ts
+        |-- store.ts
     |-- Router
-        |-- Navigator
-        |-- BaseApp.js
-        |-- Routes.js
-        |-- Navigation.config.js
-        |-- Screen.config.js
+        |-- lib
+            |-- Base.tsx
+            |-- generator.tsx
+        |-- main
+            |-- keys.ts
+            |-- screens.ts
+            |-- stack.tsx
+        |-- index.tsx
+        |-- keys.ts
+    |-- Screens
+        |-- strings
+        |-- YourScreen.page
+    |-- States
+        |-- constants
+        |-- yourData.reducer.ts
+        |-- index.ts
+    |-- Storage
+        |-- fastStorage.ts
+        |-- key.ts
     |-- Themes
-        |-- Images.js
-        |-- Colors.js
-        |-- Fonts.js
-        |-- Icons.js
-        |-- index.js
+        |-- colors.ts
+        |-- typography.js
     |-- Types
     |-- Utils
 |-- app.json
 |-- index.js
 ```
 
-#### Add new feature
-Before you create a new feature, create a directory structure with a sample like this:
+### Directory Alias
+You can use alias for accessing directory apps.
+Here example:
+```ts
+import Colors from '@themes/colors'
 ```
-Features
-|-- MyFeature
-    |-- Compoenents
-        |-- YourComponents.component.js
-        |-- YourComponents.style.js
-    |-- Screens
-        |-- YourFeature.screen.component.js
-        |-- YourFeature.screen.style.js
-    |-- MyFeature.container.js
-    |-- MyFeature.reducer.js
-    |-- MyFeature.actions.js
+
+| Alias Path | Real Path |
+|---|---|
+| @root | ./ |
+| @app | ./app |
+| @api | ./app/Api |
+| @appTypes | ./app/Types |
+| @components | ./app/Components |
+| @constants | ./app/Constants |
+| @lang | ./app/I18n |
+| @router | ./app/Router |
+| @redux | ./app/Redux |
+| @themes | ./app/Themes |
+| @utils | ./app/Utils |
+| @screens | ./app/Screens |
+| @states | ./app/States |
+| @storage | ./app/Storage |
+
+
+### How To..
+#### Add new screen
+Before you create a new screen, create a directory structure with a sample like this:
 ```
-Then don't forget to register your screen at `Screen.config.js`, then don't forget to register your screen in Screen.config.js and the navigation components in the `./Router/Navigator/` directory.
+/app
+|-- Screens
+    |-- MyScreens
+        |-- strings <- translation here
+            |-- en.json
+            |-- id.json
+            |-- index.ts
+        |-- index.tsx
+        |-- style.tsx
+|-- Router
+    |-- main
+        |-- keys.ts <- create your screen key name here
+        |-- screens.ts <- list your screen here with generator
+```
 
 #### Add new components
 Here's the folder structure of a global component in your project:
 ```
 Components
 |-- YourComponents
-    |-- YourComponents.component.js
-    |-- YourComponents.style.js
-|-- index.js    <-- regist your component on this file
+    |-- index.ts
+    |-- style.ts
 ```
 
 #### Add new assets (images or icons)
-Put your image files in the directory `./app/Assets/Images`, then don't forget to register your assets in the files available on the Themes.
+Put your image files in the directory `./app/Assets/images`, then don't forget to register your assets in the files available on the Themes.
 ```
 /
 |-- Assets      <-- put your image/icons asset here
-    |-- Images 
-    |-- Icons 
+    |-- Images
+    |-- Icons
 |-- Themes      <-- link/import your assets here
     |-- Images.js
     |-- Icons.js
